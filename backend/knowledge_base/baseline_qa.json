@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Data Structures & Algorithms - Space/Time Complexity",
+    "category": "dsa",
+    "content": "When evaluating DSA questions, focus on Big O analysis. Time complexity describes how runtime grows relative to input size, while Space complexity describes additional memory used. For sorting, QuickSort is O(N log N) average and O(N^2) worst case, whereas MergeSort is O(N log N) guaranteed but takes O(N) auxiliary space. Binary trees traversal (DFS, BFS) are O(N) time. Dynamic programming solves problems by caching subproblems, trading space O(N) for speed."
+  },
+  {
+    "title": "System Design - Caching & Database Indexing",
+    "category": "technical",
+    "content": "For scalability, use caching (Redis/Memcached) to prevent DB overloading. Clustered indexes physically sort database table rows, so only one can exist per table. Non-clustered indexes create separate lookup structures holding pointers to the physical rows. Use Consistent Hashing for distributing cache entries across multiple nodes, ensuring that adding or removing a node shifts only a minimal number of keys."
+  },
+  {
+    "title": "SQL - Window Functions & Joins",
+    "category": "sql",
+    "content": "SQL window functions compute calculations over a set of table rows related to the current row without grouping (e.g., ROW_NUMBER(), RANK(), DENSE_RANK() OVER (PARTITION BY ... ORDER BY ...)). INNER JOIN returns matching rows in both tables. LEFT JOIN returns all rows from the left table and matching rows from the right table. Indexing foreign keys accelerates join queries."
+  },
+  {
+    "title": "AI & Machine Learning - LLM Temperature & RAG Vectors",
+    "category": "ai_ml",
+    "content": "Retrieval-Augmented Generation (RAG) grounds Large Language Model prompts with relevant documents retrieved from a vector database (e.g., ChromaDB, Pinecone). LLM Temperature dictates generation creativity: 0.0 is deterministic and optimal for coding/factual tasks, whereas 0.7+ introduces high randomness. Vector databases store numerical embeddings representing semantic meanings of texts and use cosine similarity to query matches."
+  },
+  {
+    "title": "HR - Dynamic Introductions & Salary Negotiation",
+    "category": "hr",
+    "content": "When asked 'Tell me about yourself', follow the Present-Past-Future model: describe your current role and major achievements, transition to past experience highlights showing progression, and explain why this specific target role and company fit your future career plans. For salary, defer negotiation until you have an offer, benchmark rates using industry resources, and express collaborative excitement."
+  },
+  {
+    "title": "Behavioral Interviews - The STAR Technique",
+    "category": "behavioral",
+    "content": "The STAR technique stands for Situation, Task, Action, and Result. When answering behavioral questions like 'Tell me about a conflict', specify: Situation (the background context), Task (your specific responsibility), Action (what you did, how you collaborated, tools you used), and Result (the quantifiable outcome, e.g. metrics improved, tasks finished, lessons learned). Focus action statements on 'I' rather than 'We'."
+  }
+]

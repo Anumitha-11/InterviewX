@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InterviewX - Personalized AI Interview Preparation Platform</title>
+  <meta name="description" content="Ace every interview with intelligent AI coaching. Personalized interview preparation powered by Agentic AI, RAG, and Large Language Models.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Premium Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        X <span>InterviewX</span>
+      </a>
+      <ul class="nav-links" id="public-nav-links">
+        <li><a href="#why-choose-us">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <span id="user-greeting" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary); display: none;"></span>
+        <button id="nav-signin-btn" class="btn btn-secondary">Sign In</button>
+        <button id="nav-register-btn" class="btn btn-primary">Get Started</button>
+        <button id="nav-logout-btn" class="btn btn-secondary" style="display: none;">Log Out</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- PUBLIC LANDING PAGE CONTAINER              -->
+  <!-- ========================================== -->
+  <div id="landing-container">
+    
+    <!-- Hero Section -->
+    <section class="landing-hero container">
+      <div class="hero-layout">
+        <div>
+          <span class="meta-tag">The Adaptive Prep Platform</span>
+          <h1 class="editorial-title">Your interview preparation, mapped as a trajectory.</h1>
+          <p class="editorial-subtitle" style="margin-bottom: 2rem; max-width: 540px;">
+            InterviewX orchestrates collaborative AI agents and Retrieval-Augmented Generation (RAG) to scan your resume, build a personalized command center, and evaluate your responses against enterprise rubrics.
+          </p>
+          <div style="display: flex; gap: 1rem;">
+            <button class="btn btn-primary" onclick="document.getElementById('register-modal').style.display='flex'">Start Prep Session</button>
+            <a href="#how-it-works" class="btn btn-secondary">Explore The Journey</a>
+          </div>
+        </div>
+        
+        <div class="hero-timeline">
+          <div class="timeline-milestone active">
+            <span class="meta-tag">Phase 01</span>
+            <h4>Scan profile and ingest skills</h4>
+            <p>Upload your resume to extract engineering competencies and detect roadmap gaps.</p>
+          </div>
+          <div class="timeline-milestone active">
+            <span class="meta-tag">Phase 02</span>
+            <h4>Generate target questionnaire</h4>
+            <p>Multiple agents query custom vectors for role-specific behavioral and technical prompts.</p>
+          </div>
+          <div class="timeline-milestone">
+            <span class="meta-tag">Phase 03</span>
+            <h4>Practice in calm simulator</h4>
+            <p>Answer questions in an immersive sandbox and receive granular feedback logs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-choose-us" class="features-section container">
+      <span class="meta-tag" style="display: block; text-align: center; margin-bottom: 1rem;">Value proposition</span>
+      <h2 style="font-family: var(--font-serif); font-size: 2.75rem; font-style: italic; text-align: center; margin-bottom: 4rem;">Intelligent workspace vs. static dashboards</h2>
+      <div class="grid-3">
+        <div class="feature-box">
+          <span class="meta-tag">01 / Profile-driven</span>
+          <h3>Resume Analysis</h3>
+          <p>No generic question pool. All question generations are conditioned directly on your parsed projects, skills, target role, and company requirements.</p>
+        </div>
+        <div class="feature-box">
+          <span class="meta-tag">02 / Collaborative</span>
+          <h3>Agentic Architecture</h3>
+          <p>Dedicated agents for resume extraction, mock building, grading, and roadmap generation collaborate to guide your preparation loops.</p>
+        </div>
+        <div class="feature-box">
+          <span class="meta-tag">03 / Verified RAG</span>
+          <h3>Technical Rubrics</h3>
+          <p>Your answers are matched against an indexed knowledge base of architectural concepts, database indexing rules, and behavior standards.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works (Visual Concept) -->
+    <section id="how-it-works" class="container" style="padding: 6rem 0; border-bottom: 1px solid var(--border-subtle);">
+      <span class="meta-tag">Methodology</span>
+      <h2 class="editorial-title" style="margin-bottom: 3rem;">How it works</h2>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+        <div>
+          <span class="meta-tag">01. Setup</span>
+          <h4 style="margin-bottom: 0.5rem; font-weight: 600;">Ingest Resume</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary);">We analyze your PDF file for engineering skills and projects.</p>
+        </div>
+        <div>
+          <span class="meta-tag">02. Analyze</span>
+          <h4 style="margin-bottom: 0.5rem; font-weight: 600;">Detect Gaps</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary);">The system identifies conceptual gaps and builds a study path.</p>
+        </div>
+        <div>
+          <span class="meta-tag">03. Practice</span>
+          <h4 style="margin-bottom: 0.5rem; font-weight: 600;">Run Mocks</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary);">Simulate an immersive session with real-time technical grading.</p>
+        </div>
+        <div>
+          <span class="meta-tag">04. Adapt</span>
+          <h4 style="margin-bottom: 0.5rem; font-weight: 600;">Refine Metrics</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary);">Your readiness score updates and roadmap updates automatically.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="container" style="padding: 6rem 0; border-bottom: 1px solid var(--border-subtle);">
+      <span class="meta-tag" style="display: block; text-align: center; margin-bottom: 1rem;">Plans</span>
+      <h2 style="font-family: var(--font-serif); font-size: 2.75rem; font-style: italic; text-align: center; margin-bottom: 4rem;">Value-based access</h2>
+      <div class="grid-3" style="max-width: 900px; margin: 0 auto;">
+        <div style="border: 1px solid var(--border-subtle); padding: 2.5rem 2rem; border-radius: var(--radius-sm); background: var(--bg-surface);">
+          <span class="meta-tag">Starter</span>
+          <h3 style="font-size: 2rem; font-family: var(--font-serif); font-style: italic; margin-bottom: 1rem;">$29 <span style="font-size: 0.85rem; font-family: var(--font-sans); font-style: normal; color: var(--text-secondary);">/ month</span></h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 2rem;">
+            <li>— 3 Mock prep runs per month</li>
+            <li>— Resume parsing & skills fit</li>
+            <li>— Basic dashboard recommendations</li>
+          </ul>
+          <button class="btn btn-secondary" style="width: 100%;" onclick="document.getElementById('register-modal').style.display='flex'">Get Started</button>
+        </div>
+        <div style="border: 1px solid var(--accent-dim-border); padding: 2.5rem 2rem; border-radius: var(--radius-sm); background: var(--bg-panel); position: relative;">
+          <span class="meta-tag" style="color: var(--accent);">Pro (Recommended)</span>
+          <h3 style="font-size: 2rem; font-family: var(--font-serif); font-style: italic; margin-bottom: 1rem;">$79 <span style="font-size: 0.85rem; font-family: var(--font-sans); font-style: normal; color: var(--text-secondary);">/ month</span></h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 2rem;">
+            <li>— Unlimited Mock prep sessions</li>
+            <li>— Complete Agentic evaluation logs</li>
+            <li>— Dynamic study roadmap timeline</li>
+            <li>— Full resume analysis & gaps map</li>
+          </ul>
+          <button class="btn btn-primary" style="width: 100%;" onclick="document.getElementById('register-modal').style.display='flex'">Unlock Unlimited</button>
+        </div>
+        <div style="border: 1px solid var(--border-subtle); padding: 2.5rem 2rem; border-radius: var(--radius-sm); background: var(--bg-surface);">
+          <span class="meta-tag">Enterprise</span>
+          <h3 style="font-size: 2rem; font-family: var(--font-serif); font-style: italic; margin-bottom: 1rem;">$199 <span style="font-size: 0.85rem; font-family: var(--font-sans); font-style: normal; color: var(--text-secondary);">/ month</span></h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 2rem;">
+            <li>— Everything in Pro tier</li>
+            <li>— Custom company prep rubrics</li>
+            <li>— Team cohort grading logs</li>
+            <li>— Priority agent pipeline</li>
+          </ul>
+          <button class="btn btn-secondary" style="width: 100%;" onclick="document.getElementById('register-modal').style.display='flex'">Contact Sales</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section id="faq" class="container" style="padding: 6rem 0 8rem;">
+      <span class="meta-tag">FAQ</span>
+      <h2 class="editorial-title" style="margin-bottom: 3rem;">Frequently asked questions</h2>
+      <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 800px;">
+        <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.5rem;">
+          <h4 style="font-weight: 600; margin-bottom: 0.5rem;">How does the adaptive mock simulator generate questions?</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary);">The Question Generator agent coordinates with RAG retriever models to fetch specific guidelines from our database based on your parsed target role, company, and projects. It then builds highly context-aware engineering prompts, ensuring you are tested on realistic benchmarks.</p>
+        </div>
+        <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.5rem;">
+          <h4 style="font-weight: 600; margin-bottom: 0.5rem;">What makes the visual feedback superior to normal templates?</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary);">Rather than a basic numerical score, we output a granular scorecard mapping technical precision, communication style, and relevance, paired with structured bulleted items of your exact strengths, weakness gaps, and actionable improvement recommendations.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- AUTHENTICATED COMMAND CENTER APP          -->
+  <!-- ========================================== -->
+  <div id="app-container" class="app-workspace" style="display: none;">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar">
+      <div class="sidebar-section">
+        <span class="sidebar-title">Command Center</span>
+        <button class="sidebar-tab-btn active" data-tab="dashboard">
+          <span>■</span> Prep Dashboard
+        </button>
+        <button class="sidebar-tab-btn" data-tab="mock">
+          <span>■</span> Mock Simulator
+        </button>
+      </div>
+      <div class="sidebar-section">
+        <span class="sidebar-title">Workspace</span>
+        <button class="sidebar-tab-btn" data-tab="resume">
+          <span>■</span> Resume Ingestion
+        </button>
+        <button class="sidebar-tab-btn" data-tab="profile">
+          <span>■</span> Profile Settings
+        </button>
+      </div>
+      <div style="margin-top: auto; border-top: 1px solid var(--border-subtle); padding-top: 1.5rem;">
+        <span class="sidebar-title">Status: Local Engine</span>
+        <p style="font-size: 0.75rem; color: var(--success); font-family: var(--font-mono);">● Connected to API</p>
+      </div>
+    </aside>
+
+    <!-- Main Workspace Content -->
+    <main class="app-content">
+      
+      <!-- [1] DASHBOARD TAB PANEL -->
+      <div class="dashboard-tab-panel active" id="tab-dashboard">
+        <header class="dashboard-header">
+          <span class="meta-tag">Command Center Dashboard</span>
+          <div class="profile-summary">
+            <h2 class="profile-title" id="dash-profile-name">Loading candidate...</h2>
+            <span class="profile-target" id="dash-profile-role">Target Role</span>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary);" id="dash-profile-company">Target Company</span>
+          </div>
+        </header>
+
+        <div class="dashboard-asymmetric-grid">
+          <!-- Left Column: Readiness and Skills Fit -->
+          <div>
+            <div class="readiness-trajectory">
+              <div class="readiness-score-display">
+                <div class="readiness-number" id="dash-readiness-val">--%</div>
+                <div class="readiness-label">Readiness</div>
+              </div>
+              <div>
+                <span class="meta-tag">Metrics Signal</span>
+                <p class="readiness-trend" id="dash-streak-desc">Loading activity benchmarks...</p>
+              </div>
+            </div>
+
+            <h3 style="font-family: var(--font-serif); font-size: 1.75rem; font-style: italic; margin-bottom: 1.5rem;">The Signals (Extracted Gaps)</h3>
+            <div class="skills-fit-grid" id="dash-skills-container">
+              <!-- Dynamically populated skills fit bars -->
+            </div>
+            
+            <div style="margin-top: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+              <div>
+                <span class="meta-tag">Strong Areas</span>
+                <ul id="dash-strong-list" style="font-size: 0.85rem; color: var(--text-secondary); list-style: none; display: flex; flex-direction: column; gap: 0.5rem; padding-left: 0.5rem;">
+                  <!-- Populate dynamically -->
+                </ul>
+              </div>
+              <div>
+                <span class="meta-tag">Needs Attention</span>
+                <ul id="dash-weak-list" style="font-size: 0.85rem; color: var(--text-secondary); list-style: none; display: flex; flex-direction: column; gap: 0.5rem; padding-left: 0.5rem;">
+                  <!-- Populate dynamically -->
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: The Path & Recent Runs -->
+          <div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.75rem; font-style: italic; margin-bottom: 1.5rem;">The Path (Roadmap Progress)</h3>
+            <div class="journey-timeline" id="dash-roadmap-container">
+              <!-- Dynamically populated vertical timeline nodes -->
+            </div>
+
+            <h3 style="font-family: var(--font-serif); font-size: 1.75rem; font-style: italic; margin-top: 3.5rem; margin-bottom: 1.5rem;">Recent Runs</h3>
+            <div class="activity-list" id="dash-activity-container">
+              <!-- Dynamically populated recent runs -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- [2] MOCK INTERVIEW SIMULATOR PANEL -->
+      <div class="dashboard-tab-panel" id="tab-mock">
+        <!-- Simulator Lobby / Config -->
+        <div id="mock-lobby" style="max-width: 500px; margin: 4rem 0;">
+          <span class="meta-tag">Configure Practice Mock Run</span>
+          <h2 class="editorial-title" style="font-size: 2.5rem; margin-bottom: 2.5rem;">Initialize session</h2>
+          
+          <div class="form-group">
+            <label>Target Role (override profile)</label>
+            <input type="text" id="mock-config-role" class="form-control" placeholder="e.g. Backend Staff Engineer" />
+          </div>
+          <div class="form-group">
+            <label>Target Company (override profile)</label>
+            <input type="text" id="mock-config-company" class="form-control" placeholder="e.g. Stripe" />
+          </div>
+          
+          <button id="start-mock-btn" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">Start Prep Run</button>
+        </div>
+
+        <!-- Active Interview Sandbox -->
+        <div id="mock-sandbox" class="simulator-layout" style="display: none;">
+          
+          <!-- Left Main Workspace -->
+          <div class="simulator-workspace">
+            <span class="meta-tag" id="sim-progress-counter">Question 1 of 3</span>
+            
+            <div class="question-focus-box">
+              <h3 class="question-focus-text" id="sim-question-text">Loading prompt...</h3>
+            </div>
+            
+            <div class="workspace-input-area">
+              <textarea id="sim-input-text" class="workspace-textarea" placeholder="Type your response here... (Ensure structure, e.g. STAR style for behavioral, or technical logic details)"></textarea>
+              <div>
+                <button id="sim-send-btn" class="btn btn-primary">Submit Response</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Agent logs and details -->
+          <div class="simulator-sidebar">
+            <div>
+              <span class="sidebar-title">Agentic Workflow Logs</span>
+              <div class="agent-log-console" id="sim-log-console">
+                <div class="log-line">🤖 Console initialized.</div>
+              </div>
+            </div>
+            <div>
+              <span class="sidebar-title">Question Metadata</span>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.25rem;">Category: <span id="sim-meta-category" style="font-family: var(--font-mono); color: var(--accent);">Technical</span></p>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">Difficulty: <span id="sim-meta-difficulty" style="font-family: var(--font-mono); color: var(--accent);">Medium</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question Evaluation Scorecard -->
+        <div id="mock-evaluation" style="display: none; max-width: 900px; margin: 2rem 0;">
+          <span class="meta-tag">Rubric Grading Evaluation</span>
+          <h2 class="editorial-title" style="font-size: 2.5rem; margin-bottom: 2.5rem;">Question Feedback</h2>
+          
+          <div class="scorecard-container">
+            <div class="scorecard-metric">
+              <div class="scorecard-val" id="eval-score-overall">0.0</div>
+              <div class="scorecard-label">Overall Score</div>
+            </div>
+            <div class="scorecard-metric">
+              <div class="scorecard-val" id="eval-score-tech">0.0</div>
+              <div class="scorecard-label">Technical</div>
+            </div>
+            <div class="scorecard-metric">
+              <div class="scorecard-val" id="eval-score-comm">0.0</div>
+              <div class="scorecard-label">Communication</div>
+            </div>
+            <div class="scorecard-metric">
+              <div class="scorecard-val" id="eval-score-relevance">0.0</div>
+              <div class="scorecard-label">Relevance</div>
+            </div>
+          </div>
+
+          <div class="feedback-details-grid">
+            <div class="feedback-list-box">
+              <h4>Extracted Strengths</h4>
+              <ul class="feedback-list" id="eval-strengths-list">
+                <!-- Populate dynamically -->
+              </ul>
+            </div>
+            <div class="feedback-list-box">
+              <h4>Improvement Suggestions</h4>
+              <ul class="feedback-list" id="eval-suggestions-list">
+                <!-- Populate dynamically -->
+              </ul>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div>
+            <button id="eval-next-btn" class="btn btn-primary">Proceed to Next Question</button>
+          </div>
+        </div>
+
+        <!-- Final Scorecard Assessment Report -->
+        <div id="mock-report" style="display: none; max-width: 900px; margin: 2rem 0;">
+          <span class="meta-tag">Final Performance Audit</span>
+          <h2 class="editorial-title" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Assessment Report</h2>
+          <div style="font-family: var(--font-display); font-size: 3.5rem; font-weight: 800; color: var(--accent); margin-bottom: 2rem;" id="report-score-display">0.0 / 10</div>
+
+          
+          <p id="report-feedback-summary" style="font-size: 1.05rem; color: var(--text-primary); line-height: 1.6; margin-bottom: 3rem;">
+            Loading audit feedback...
+          </p>
+
+          <div class="feedback-details-grid" style="margin-bottom: 3rem;">
+            <div class="feedback-list-box">
+              <h4>Top Capabilities</h4>
+              <ul class="feedback-list" id="report-strengths-list">
+                <!-- Populate dynamically -->
+              </ul>
+            </div>
+            <div class="feedback-list-box">
+              <h4>Conceptual Gaps</h4>
+              <ul class="feedback-list" id="report-weaknesses-list">
+                <!-- Populate dynamically -->
+              </ul>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div>
+            <button id="report-close-btn" class="btn btn-secondary">Return to Command Center</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- [3] RESUME INGESTION TAB PANEL -->
+      <div class="dashboard-tab-panel" id="tab-resume">
+        <header class="dashboard-header">
+          <span class="meta-tag">Workspace / Resume Ingestion</span>
+          <h2 class="profile-title">Ingest engineering resume</h2>
+        </header>
+
+        <div class="resume-layout-grid">
+          <div>
+            <span class="meta-tag">Upload PDF File</span>
+            <div class="dropzone-container" onclick="document.getElementById('resume-file-input').click()">
+              <input type="file" id="resume-file-input" accept=".pdf" style="display: none;" />
+              <div style="font-size: 2.5rem; color: var(--accent);">📤</div>
+              <h4 style="font-weight: 600;">Select Resume PDF</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);" id="resume-upload-status">No PDF chosen (Required file format: PDF)</p>
+            </div>
+          </div>
+
+          <div class="analysis-results-box" id="parsed-resume-results" style="display: none;">
+            <div>
+              <span class="meta-tag">Ingested Competencies</span>
+              <div class="tags-wrap" id="parsed-skills-list">
+                <!-- Populate dynamically -->
+              </div>
+            </div>
+            <div>
+              <span class="meta-tag">Detected Engineering Gaps</span>
+              <ul class="feedback-list" id="parsed-gaps-list" style="margin-top: 1rem;">
+                <!-- Populate dynamically -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- [4] PROFILE SETTINGS TAB PANEL -->
+      <div class="dashboard-tab-panel" id="tab-profile">
+        <header class="dashboard-header">
+          <span class="meta-tag">Workspace / Settings</span>
+          <h2 class="profile-title">Candidate prep settings</h2>
+        </header>
+
+        <form id="profile-settings-form" class="settings-form-layout">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="prof-name" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>Target Role</label>
+            <input type="text" id="prof-role" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>Experience Level</label>
+            <select id="prof-experience" class="form-control" style="background-color: var(--bg-base); height: 42px;">
+              <option value="Junior">Junior Developer (0-2 Yrs)</option>
+              <option value="Mid Level">Mid Level Developer (2-5 Yrs)</option>
+              <option value="Senior">Senior Developer (5+ Yrs)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Target Company</label>
+            <input type="text" id="prof-company" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>Interview Type Preference</label>
+            <select id="prof-pref-type" class="form-control" style="background-color: var(--bg-base); height: 42px;">
+              <option value="Mix">Mix (Behavioral + Tech)</option>
+              <option value="Technical">Strictly Technical</option>
+              <option value="Behavioral">Strictly Behavioral</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Skills Inventory (separated by comma)</label>
+            <input type="text" id="prof-skills" class="form-control" placeholder="e.g. Python, SQL, React" />
+          </div>
+          <div id="profile-save-status" style="font-size: 0.85rem; color: var(--success); display: none;">✓ Profile changes successfully persisted.</div>
+          <div>
+            <button type="submit" class="btn btn-primary">Save Profile Changes</button>
+          </div>
+        </form>
+      </div>
+      
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div style="grid-column: span 2;">
+          <div class="footer-logo">X InterviewX</div>
+          <p style="color: var(--text-secondary); max-width: 320px; line-height: 1.6;">
+            Personalized AI mock interview preparation mapped as a structured learning trajectory.
+          </p>
+        </div>
+        <div>
+          <span class="meta-tag">Platform</span>
+          <ul class="footer-links-list">
+            <li><a href="#">Overview</a></li>
+            <li><a href="#why-choose-us">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="meta-tag">Resources</span>
+          <ul class="footer-links-list">
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Guides</a></li>
+            <li><a href="#">System status</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 InterviewX, Inc. All rights reserved. Redesigned with custom editorial standards.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- EDITORIAL SPLIT AUTH MODALS                -->
+  <!-- ========================================== -->
+  
+  <!-- Sign In Modal -->
+  <div id="signin-modal" class="modal-overlay">
+    <div class="auth-split-container">
+      <div class="auth-editorial-panel">
+        <span class="meta-tag">Preparation Quote</span>
+        <div class="quote-text">"Before anything else, preparation is the key to success."</div>
+        <div class="quote-author">— Alexander Graham Bell</div>
+      </div>
+      <div class="auth-form-panel">
+        <button class="modal-close-btn" id="signin-close">&times;</button>
+        <span class="meta-tag">Welcome Back</span>
+        <h3 style="font-family: var(--font-serif); font-size: 2rem; font-style: italic; margin-bottom: 2rem;">Sign in to Command Center</h3>
+        <form id="signin-form">
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="signin-email" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="signin-password" class="form-control" required />
+          </div>
+          <div id="signin-error" class="error-message"></div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">Sign In</button>
+        </form>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1.5rem; text-align: center;">
+          Don't have an account? <a href="#" id="to-register" style="color: var(--accent); font-weight: 500;">Sign Up</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div id="register-modal" class="modal-overlay">
+    <div class="auth-split-container">
+      <div class="auth-editorial-panel">
+        <span class="meta-tag">Confidence Quote</span>
+        <div class="quote-text">"One important key to self-confidence is preparation."</div>
+        <div class="quote-author">— Arthur Ashe</div>
+      </div>
+      <div class="auth-form-panel">
+        <button class="modal-close-btn" id="register-close">&times;</button>
+        <span class="meta-tag">Get Started</span>
+        <h3 style="font-family: var(--font-serif); font-size: 2rem; font-style: italic; margin-bottom: 2rem;">Create your profile</h3>
+        <form id="register-form">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="register-name" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="register-email" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="register-password" class="form-control" required />
+          </div>
+          <div id="register-error" class="error-message"></div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">Create Account</button>
+        </form>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1.5rem; text-align: center;">
+          Already have an account? <a href="#" id="to-signin" style="color: var(--accent); font-weight: 500;">Sign In</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
